@@ -1,49 +1,84 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- * @flow
- */
 
 import React, {Component} from 'react';
 import {Platform, StyleSheet, Text, View} from 'react-native';
 
-const instructions = Platform.select({
-    ios: 'Press Cmd+R to reload,\n' + 'Cmd+D or shake for dev menu',
-    android:
-        'Double tap R on your keyboard to reload,\n' +
-        'Shake or press menu button for dev menu',
-});
+import {DrawerNavigator,DrawerItems} from 'react-navigation';
+import anasayfa from './anasayfa'
+import BarkodOku from './BarkodOku'
+import Personel from './Personel'
+import Raporlar from './Raporlar'
+import SiparisRaporu from './SiparisRaporu'
+import TezgahDurumu from './TezgahDurumu'
 
-type Props = {};
-export default class App extends Component<Props> {
+import {Container, Content, Header, Body, Icon} from 'native-base'
+export default  class App extends Component{
     render() {
         return (
-            <View style={styles.container}>
-                <Text style={styles.welcome}>Welcome to React Native!</Text>
-                <Text style={styles.instructions}>To get started, edit App.js</Text>
-                <Text style={styles.instructions}>{instructions}</Text>
-            </View>
+            <MyApp/>
+
         );
     }
 }
+const CustomDrawerContentComponent = (props)=> (
+    <Container style={{backgroundColor:'white'}}>
+        <Header style={{height:200,backgroundColor: 'white'}}>
+            <Body>
+                  <Text style={styles.text}>welcome</Text>
+            </Body>
+        </Header>
 
-const styles = StyleSheet.create({
+        <Content>
+            <DrawerItems {...props}/>
+        </Content>
+
+    </Container>
+);
+
+const MyApp = DrawerNavigator({
+     Home: {
+         screen : anasayfa
+     },
+        TezgahD: {
+         screen: TezgahDurumu
+    },
+    SiparisR: {
+         screen: SiparisRaporu
+    },
+    PersonelD: {
+         screen: Personel
+    },
+    RaporlarD: {
+         screen: Raporlar
+    },
+    BarkodO: {
+         screen: BarkodOku
+    }
+
+
+},
+{
+ initialRouteName : 'Home',
+    drawerPosition: 'left',
+    contentComponent: CustomDrawerContentComponent,
+    drawerOpenRoute: 'DrawerOpen',
+    drawerCloseRoute: 'DrawerClose',
+    drawerToggleRoute: 'DrawerToggle',
+
+}
+
+);
+ styles = StyleSheet.create({
     container: {
         flex: 1,
         justifyContent: 'center',
         alignItems: 'center',
         backgroundColor: '#F5FCFF',
     },
-    welcome: {
-        fontSize: 20,
-        textAlign: 'center',
-        margin: 10,
-    },
-    instructions: {
-        textAlign: 'center',
-        color: '#333333',
-        marginBottom: 5,
-    },
+     text: {
+        color: 'black',
+         fontSize:25,
+         borderRadius:75,
+
+     }
+
 });

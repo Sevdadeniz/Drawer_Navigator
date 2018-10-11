@@ -8,15 +8,16 @@ import {
 } from 'react-native';
 import {Icon, Button,Container,Header,Content,Left } from 'native-base';
 
-class SiparisRaporu extends Component{
+class RaporlarD extends Component{
 
     static navigationOptions ={
         drawerIcon:(
-            <Image source={require ('./images/rapor.png')}
+            <Image source={require ('./images/document.png')}
                    style={{height:24, width:24}}
             />
         )
     };
+
     render() {
         return (
             <Container>
@@ -26,10 +27,10 @@ class SiparisRaporu extends Component{
                     </Left>
                 </Header>
                 <Content>
-                    <Text>S Screen   </Text>
+                    <Text>R Screen   </Text>
                 </Content>
             </Container>
         );
     }
 }
-export default SiparisRaporu;
+export default RaporlarD;

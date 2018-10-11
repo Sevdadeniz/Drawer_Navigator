@@ -1,84 +1,26 @@
-
 import React, {Component} from 'react';
 import {Platform, StyleSheet, Text, View} from 'react-native';
+import {StackNavigator} from 'react-navigation';
 
-import {DrawerNavigator,DrawerItems} from 'react-navigation';
-import anasayfa from './anasayfa'
-import BarkodOku from './BarkodOku'
-import Personel from './Personel'
-import Raporlar from './Raporlar'
-import SiparisRaporu from './SiparisRaporu'
-import TezgahDurumu from './TezgahDurumu'
-
-import {Container, Content, Header, Body, Icon} from 'native-base'
-export default  class App extends Component{
-    render() {
-        return (
-            <MyApp/>
-
-        );
-    }
-}
-const CustomDrawerContentComponent = (props)=> (
-    <Container style={{backgroundColor:'white'}}>
-        <Header style={{height:200,backgroundColor: 'white'}}>
-            <Body>
-                  <Text style={styles.text}>welcome</Text>
-            </Body>
-        </Header>
-
-        <Content>
-            <DrawerItems {...props}/>
-        </Content>
-
-    </Container>
-);
-
-const MyApp = DrawerNavigator({
-     Home: {
-         screen : anasayfa
-     },
-        TezgahD: {
-         screen: TezgahDurumu
-    },
-    SiparisR: {
-         screen: SiparisRaporu
-    },
-    PersonelD: {
-         screen: Personel
-    },
-    RaporlarD: {
-         screen: Raporlar
-    },
-    BarkodO: {
-         screen: BarkodOku
-    }
+import Login from './Login';
+import Drawer from './Drawer';
+import Home from './anasayfa';
+import BarkodO from './BarkodO';
+import PersonelD from './PersonelD';
+import RaporlarD from './RaporlarD';
+import SiparisR from './SiparisR';
+import TezgahD from './TezgahD';
 
 
-},
-{
- initialRouteName : 'Home',
-    drawerPosition: 'left',
-    contentComponent: CustomDrawerContentComponent,
-    drawerOpenRoute: 'DrawerOpen',
-    drawerCloseRoute: 'DrawerClose',
-    drawerToggleRoute: 'DrawerToggle',
-
-}
-
-);
- styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        justifyContent: 'center',
-        alignItems: 'center',
-        backgroundColor: '#F5FCFF',
-    },
-     text: {
-        color: 'black',
-         fontSize:25,
-         borderRadius:75,
-
-     }
-
+const Navigation = StackNavigator({
+    Login:{screen:Login},
+    second: {screen: Drawer},
+    Home: {screen: Home},
+    BarkodO: {screen: BarkodO},
+    TezgahDurumu: {screen: TezgahD},
+    SiparisRaporu: {screen: SiparisR},
+    PersonelDurumu: {screen: PersonelD},
+    Raporlar: {screen: RaporlarD},
 });
+export default Navigation;
+

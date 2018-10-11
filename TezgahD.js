@@ -8,10 +8,11 @@ import {
 } from 'react-native';
 import {Icon, Button,Container,Header,Content,Left } from 'native-base';
 
-class Personel extends Component{
+
+class TezgahD extends Component{
     static navigationOptions ={
         drawerIcon:(
-            <Image source={require ('./images/personel.png')}
+            <Image source={require ('./images/like.png')}
                    style={{height:24, width:24}}
             />
         )
@@ -22,14 +23,15 @@ class Personel extends Component{
             <Container>
                 <Header>
                     <Left>
-                        <Icon name="menu" onPress={() => this.props.navigation.navigate('DrawerOpen')}/>
+                        <Icon name={'menu'} onPress={() => this.props.navigation.navigate('DrawerOpen')}/>
+
                     </Left>
                 </Header>
                 <Content>
-                    <Text>P Screen   </Text>
+                    <Text>T Screen   </Text>
                 </Content>
             </Container>
         );
     }
 }
-export default Personel;
+export default TezgahD;

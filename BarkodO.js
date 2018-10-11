@@ -4,15 +4,15 @@ import {
     Platform,
     StyleSheet,
     Text,
-    View
+    View,
 } from 'react-native';
 import {Icon, Button,Container,Header,Content,Left } from 'native-base';
 
+class BarkodO extends Component{
 
-class TezgahDurumu extends Component{
     static navigationOptions ={
         drawerIcon:(
-            <Image source={require ('./images/like.png')}
+            <Image source={require ('./images/locator.png')}
                    style={{height:24, width:24}}
             />
         )
@@ -23,15 +23,14 @@ class TezgahDurumu extends Component{
             <Container>
                 <Header>
                     <Left>
-                        <Icon name={'menu'} onPress={() => this.props.navigation.navigate('DrawerOpen')}/>
-
+                        <Icon name="menu" onPress={() => this.props.navigation.navigate('DrawerOpen')}/>
                     </Left>
                 </Header>
                 <Content>
-                    <Text>T Screen   </Text>
+                    <Text>BO Screen   </Text>
                 </Content>
             </Container>
         );
     }
 }
-export default TezgahDurumu;
+export default BarkodO;

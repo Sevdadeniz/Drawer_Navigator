@@ -4,20 +4,19 @@ import {
     Platform,
     StyleSheet,
     Text,
-    View,
+    View
 } from 'react-native';
 import {Icon, Button,Container,Header,Content,Left } from 'native-base';
 
-class BarkodOku extends Component{
+class SiparisR extends Component{
 
     static navigationOptions ={
         drawerIcon:(
-            <Image source={require ('./images/locator.png')}
+            <Image source={require ('./images/rapor.png')}
                    style={{height:24, width:24}}
             />
         )
     };
-
     render() {
         return (
             <Container>
@@ -27,10 +26,10 @@ class BarkodOku extends Component{
                     </Left>
                 </Header>
                 <Content>
-                    <Text>BO Screen   </Text>
+                    <Text>S Screen   </Text>
                 </Content>
             </Container>
         );
     }
 }
-export default BarkodOku;
+export default SiparisR;
